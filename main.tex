@@ -55,6 +55,7 @@
 % My packages
 \usepackage{hanging}
 \usepackage{caption}
+\usepackage{tikz}
 %\usepackage[utf8]{inputenc}
 %\usepackage[english]{babel}
 \usepackage[style=apa,citestyle=apa]{biblatex}
@@ -113,7 +114,7 @@
 \mainmatter 
 
 \title{Machine Learning Notes}
-\subtitle{Version: \number\month .\number\year.verSubstitution}
+% \subtitle{Version: \number\month .\number\year.verSubstitution}
 \titlerunning{ML Notes}
 \author{by Uzair Akbar}
 \institute{}
@@ -129,6 +130,11 @@
 \endgroup
 \medskip
 \medskip
+
+% Document versioning
+\begin{tikzpicture}[overlay, remember picture]
+\path (current page.south west) ++(1, 1) node[above right] { \textcolor{lightgray}{\footnotesize Version: \number\month .\number\year.verSubstitution }};
+\end{tikzpicture}
 
 \section{Linear Algebra}
 
