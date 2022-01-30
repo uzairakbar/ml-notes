@@ -1,7 +1,7 @@
 name: "Generate Document"
 on:
   push:
-    branches: [main]
+    branches: [master]
 defaults:
   run:
     working-directory: .
