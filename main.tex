@@ -79,6 +79,13 @@
   \renewcommand\UrlFont{\ttfamily\color{blue}}%
   \renewcommand\UrlLeft{\uline\bgroup}%
   \renewcommand\UrlRight{\egroup}}
+
+\newcommand\blfootnote[1]{%
+  \begingroup
+  \renewcommand\thefootnote{}\footnote{#1}%
+  \addtocounter{footnote}{-1}%
+  \endgroup
+}
 %////////////////////////////////////////////////////////
 
 
@@ -106,6 +113,7 @@
 \mainmatter 
 
 \title{Machine Learning Notes}
+\subtitle{Version: \number\month .\number\year.verSubstitution}
 \titlerunning{ML Notes}
 \author{by Uzair Akbar}
 \institute{}
