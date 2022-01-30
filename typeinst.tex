@@ -1,0 +1,248 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Ce gabarit peu servir autant les philosophes que les scientifiques ; 
+% et même d'autres genres, vous en faites ce que vous voulez.
+% J'ai modifié et partagé ce gabarit afin d'épargner à d'autres 
+% d'interminables heures à modifier des gabarits d'articles anglais. 
+% 
+% L'ajout d'une table des matières et une bibliographie a été ajoutée,
+% rendant le gabarit plus ajusté aux besoins de plusieurs.
+%
+% Pour retrouvé le gabarit original, veuillez télécharger les
+% documents suivants: llncs2e.zip (.cls et autres) et 
+% typeinst.zip (.tex). Les documents ci-haut mentionnés ne sont pas 
+% disponibles au même endroit, alors je vous invite à fouiller le web. 
+%
+% Pour l'instant (02-2016) ils sont disponibles tous deux ici :
+%
+% http://kawahara.ca/springer-lncs-latex-template/
+%
+% Netkompt
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%% file typeinst.tex %%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% This is the LaTeX source for the instructions to authors using
+% the LaTeX document class 'llncs.cls' for contributions to
+% the Lecture Notes in Computer Sciences series.
+% http://www.springer.com/lncs       Springer Heidelberg 2006/05/04
+%
+% It may be used as a template for your own input - copy it
+% to a new file with a new name and use it as the basis
+% for your article.
+%
+% NB: the document class 'llncs' has its own and detailed documentation, see
+% ftp://ftp.springer.de/data/pubftp/pub/tex/latex/llncs/latex2e/llncsdoc.pdf
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[runningheads,a4paper]{llncs}
+
+\usepackage[utf8]{inputenc}
+
+%\usepackage{natbib}
+%\bibliographystyle{IEEEtran}
+%\bibliographystyle{apacite}
+
+\usepackage{amssymb}
+\setcounter{tocdepth}{2}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\DeclareMathOperator*{\argmin}{arg\,min}
+
+%////////////////////////////////////////////////////////
+% My packages
+\usepackage{hanging}
+\usepackage{caption}
+%\usepackage[utf8]{inputenc}
+%\usepackage[english]{babel}
+\usepackage[style=apa,citestyle=apa]{biblatex}
+\addbibresource{references.bib}
+%\bibliography{references}
+\usepackage{etoolbox}
+\patchcmd{\thebibliography}{\section*}{\section}{}{}
+
+\usepackage{color}
+\usepackage[normalem]{ulem}
+\usepackage{url}
+
+\usepackage{hyperref}
+\hypersetup{
+%    colorlinks=true,
+%    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+}
+
+\DeclareUrlCommand\ULurl{%
+  \renewcommand\UrlFont{\ttfamily\color{blue}}%
+  \renewcommand\UrlLeft{\uline\bgroup}%
+  \renewcommand\UrlRight{\egroup}}
+%////////////////////////////////////////////////////////
+
+
+
+%%%%%%%%%%%%%%%%%%%%
+\usepackage{mathtools}
+%\usepackage[bottom]{footmisc}
+%\usepackage{subcaption}
+% end - My packages
+\usepackage{float}
+%\usepackage[french]{babel} % Pour adopter les règles de typographie française
+\usepackage[T1]{fontenc} % Pour que les lettres accentuées soient reconnues
+\usepackage{lastpage}
+
+\usepackage{url}
+% \urldef{\mailsa}\path|{alfred.hofmann, ursula.barth, ingrid.haas, frank.holzwarth,|
+% \urldef{\mailsb}\path|anna.kramer, leonie.kunz, christine.reiss, nicole.sator,|
+% \urldef{\mailsc}\path|erika.siebert-cole, peter.strasser, lncs}@springer.com|    
+% \newcommand{\keywords}[1]{\par\addvspace\baselineskip
+% \noindent\keywordname\enspace\ignorespaces#1}
+% \addtocounter{page}{1}
+\begin{document}
+
+
+\mainmatter 
+
+\title{Machine Learning Notes}
+\titlerunning{ML Notes}
+\author{by Uzair Akbar}
+\institute{}
+\authorrunning{ML Notes}
+%\toctitle{Table of Contents}
+%\tocauthor{{}}
+% Made changes here for TOC title line
+{\def\addcontentsline#1#2#3{}\maketitle}
+\medskip
+\begingroup
+\let\clearpage\relax
+\tableofcontents
+\endgroup
+\medskip
+\medskip
+
+\section{Linear Algebra}
+
+\section{Prob. \& Stats.}
+
+\section{Convex Optimization}
+
+\appendix
+\section{Miscellaneous}
+\subsection{Topics To Read}
+\subsection{Resources}
+
+
+% \section{Task 1 (Exponential Cost Function)}
+% \subsection{Part a)}
+
+% \subsubsection{Definitions:}
+% \begin{equation*}
+%      \begin{aligned}
+%      &\pi^{k}:={\mu_{k}, \mu_{k+1}, \dots, \mu_{n-1}}
+%      \\
+%      &J_{k}^{*}(x_{k}):=\min_{\pi^k} \mathop{\mathbb{E}}_{\substack{w_i\\i=k,\dots,N-1}}\Bigg(\exp\bigg(g_N(x_N)+\sum_{i=k}^{N-1}{g_i(x_i,\mu_i,w_i)}\bigg)\Bigg)
+%      \\
+%      &J_{k}^{*}(x_{k}):=\exp\big(g_N(x_N)\big)
+%      \end{aligned}
+% \end{equation*}
+
+% \subsubsection{To Prove:} To show that $J_k^*$ is equal to $J_k$, where $J_k$ is given by
+
+% \begin{equation}
+% \left.
+% \begin{aligned}
+% &J_N(x_N)=\exp\big(g_N(x_N)\big)
+% \\
+% &J_k(x_k)=\min_{u_k \in U_k(x_k)}\mathop{\mathbb{E}}_{w_k}\bigg\{J_{k+1}\big(f_k(x_k,u_k,w_k)\big) \times \exp\big(g_k(x_k,u_k,w_k)\big)\bigg\}.
+% \end{aligned}
+% \right\}
+% \end{equation}
+
+% \subsubsection{Proof:}
+% By definition, for $k=N$,
+% \begin{equation*}
+% J_N^*(x_N)=\exp\big(g_N(x_N)\big)=J_N(x_N).
+% \end{equation*}
+
+% Now, assume that
+
+% \begin{equation*}
+% J_{k+1}^*(x_{k+1})=J_{k+1}(x_{k+1}).
+% \end{equation*}
+
+% Now,
+% \begin{equation*}
+%     \begin{aligned}
+%     \because\quad\;\;\;\pi^k&=\{\mu_k, \pi^{k+1}\}
+%     \\
+%     J_k^*(x_k)&=\min_{\pi^k} \mathop{\mathbb{E}}_{\substack{w_i\\i=k,\dots,N-1}}\Bigg(\exp\bigg(g_N(x_N)+g_k(x_k, \mu_k, w_k)+\sum_{i=k+1}^{N-1}{g_i(x_i,\mu_i,w_i)}\bigg)\Bigg)
+%     \\
+%     &=\min_{\mu^k}\mathop{\mathbb{E}}_{w_k}\bigg(\exp\big(g_k(x_k,\mu_k,w_k)\big) \times \quad\quad\quad\quad\quad\quad \text{( Principle of optimality )}\\
+%     &\quad\quad\min_{\pi^{k+1}}\mathop{\mathbb{E}}_{\substack{w_i\\i=k+1,\dots,N-1}}\Big(\exp\big(g_N(x_N)+\sum_{i=k+1}^{N-1}{g_i(x_i,\mu_i,w_i)}\big)\Big)\bigg)
+%     \\
+%     &=\min_{\mu^k}\mathop{\mathbb{E}}_{w_k}\bigg(\exp\big(g_k(x_k,\mu_k,w_k)\big) \times J_{k+1}^*(x_{k+1})\bigg)
+%     \\
+%     &=\min_{u_k \in U_k(x_k)}\mathop{\mathbb{E}}_{w_k}\bigg(\exp\big(g_k(x_k,u_k,w_k)\big) \times J_{k+1}(x_{k+1})\bigg)
+%     \\
+%     \therefore J_k^*(x_k)&=J_k(x_k)
+%     \end{aligned}
+% \end{equation*}
+
+% %-----------------------------------
+% %-----------------------------------
+
+% \subsection{Part b)}
+
+% \subsubsection{Definitions:}
+% \begin{equation*}
+%     \begin{aligned}
+%     &V_k(x_k)=\ln{J_k(x_k)}
+%     \\
+%     &g_k = g_k(x_k, u_k)
+%     \end{aligned}
+% \end{equation*}
+
+% \subsubsection{To Prove:}
+% To show that algorithm (3) can be rewritten as
+% \begin{equation*}
+%     \begin{aligned}
+%     &V_N(x_N)=g_N(x_N),
+%     \\
+%     &V_k(x_k) = \min_{u_k \in U_k(x_k)}\bigg\{g_k(x_k, u_k)+\ln{\mathop{\mathbb{E}}_{w_k}}\Big\{\exp\Big(V_{k+1}\big(f_k(x_k, u_k, w_k)\big)\Big)\Big\}\bigg\}
+%     \end{aligned}
+% \end{equation*}
+
+% \subsubsection{Proof:}
+
+% \begin{equation*}
+%     \begin{aligned}
+%     &\because&V_k(x_k)&=&\ln{J_k(x_k)}\;\,&
+%     \\
+%     &\therefore&V_N(x_N)&=&\ln{J_N(x_N)}&=\ln{\Big(\exp\big(g_{N}(x_N)\big)\Big)}=g_N(x_N)
+%     \\
+%     \end{aligned}
+% \end{equation*}
+
+% Now, as $\ln$ is monotonically increasing, we can interchange it with $\min$.
+
+% \begin{equation*}
+%     \begin{aligned}
+%     \because V_k(x_k)&=\ln{J_k(x_k)}
+%     \\
+%     &=\ln\bigg(\min_{u_k \in U_k(x_k)}\mathop{\mathbb{E}}_{w_k}\Big(J_{k+1}(x_{k+1}).\exp\big(g_k(x_k, u_k)\big)\Big)\bigg)
+%     \\
+%     &=\min_{u_k \in U_k(x_k)}{\ln{\bigg(\exp\big(g_k(x_k, u_k)\big).\mathop{\mathbb{E}}_{w_k}\Big(J_{k+1}(x_{k+1})\Big)\bigg)}}
+%     \\
+%     &=\min_{u_k \in U_k(x_k)}{{\Bigg(g_k(x_k, u_k)+\ln\bigg(\mathop{\mathbb{E}}_{w_k}\Big(J_{k+1}(x_{k+1})\Big)\bigg)\Bigg)}}
+%     \\
+%     \therefore V_k(x_k)&= \min_{u_k \in U_k(x_k)}\bigg\{g_k(x_k, u_k)+\ln{\mathop{\mathbb{E}}_{w_k}}\Big\{\exp\Big(V_{k+1}\big(f_k(x_k, u_k, w_k)\big)\Big)\Big\}\bigg\}
+%     \end{aligned}
+% \end{equation*}
+
+%-----------------------------------
+%-----------------------------------
+
+\end{document}
